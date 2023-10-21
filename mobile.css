@@ -90,6 +90,17 @@ body {
   letter-spacing: -1.2px;
 }
 
+/* DESACTIVATE UP/DOWN ARROWS IN INPUTS WITH TYPE NUMBER */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .calculator-measurement-system-options {
   margin-top: 24px;
   display: flex;
@@ -135,7 +146,7 @@ body {
 .cm {
   position: absolute;
   top: 52px;
-  left: 190px;
+  left: 222px;
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
@@ -148,7 +159,7 @@ body {
 .kg {
   position: absolute;
   top: 172px;
-  left: 197px;
+  left: 229px;
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
@@ -158,7 +169,63 @@ body {
   color: var(--blue);
 }
 
-.calculator-height-input {
+.ft {
+  display: none;
+  position: absolute;
+  top: 53px;
+  left: 99px;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  color: var(--blue);
+}
+
+.in {
+  display: none;
+  position: absolute;
+  top: 53px;
+  left: 243px;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  color: var(--blue);
+}
+
+.st {
+  display: none;
+  position: absolute;
+  top: 157px;
+  left: 94px;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  color: var(--blue);
+}
+
+.lbs {
+  display: none;
+  position: absolute;
+  top: 158px;
+  left: 230px;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  color: var(--blue);
+}
+
+.calculator-height-input-metric {
   border-radius: 12px;
   border: 1px solid var(--borders);
   background: var(--Pure-White, #fff);
@@ -177,7 +244,7 @@ body {
   margin-bottom: 16px;
 }
 
-.calculator-weight-input {
+.calculator-weight-input-metric {
   border-radius: 12px;
   border: 1px solid var(--borders);
   background: var(--Pure-White, #fff);
@@ -193,6 +260,85 @@ body {
   line-height: normal;
   letter-spacing: -1.2px;
   color: var(--gunmetal);
+}
+
+.calculator-input-imperial-container {
+  display: none;
+  flex-flow: row nowrap;
+}
+
+.calculator-height-input-imperial-ft {
+  display: flex;
+  padding: 20px 24px;
+  align-items: flex-start;
+  border-radius: 12px;
+  border: 1px solid var(--Borders, #d8e2e7);
+  background: var(--Pure-White, #fff);
+  width: 100%;
+  margin-right: 16px;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  color: var(--gunmetal);
+  margin-top: 8px;
+}
+
+.calculator-height-input-imperial-in {
+  display: flex;
+  padding: 20px 24px;
+  align-items: flex-start;
+  border-radius: 12px;
+  border: 1px solid var(--Borders, #d8e2e7);
+  background: var(--Pure-White, #fff);
+  width: 100%;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  color: var(--gunmetal);
+  margin-top: 8px;
+}
+
+.calculator-weight-input-imperial-st {
+  display: flex;
+  padding: 20px 24px;
+  align-items: flex-start;
+  border-radius: 12px;
+  border: 1px solid var(--Borders, #d8e2e7);
+  background: var(--Pure-White, #fff);
+  width: 100%;
+  margin-right: 16px;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  color: var(--gunmetal);
+  margin-top: 8px;
+}
+
+.calculator-weight-input-imperial-lbs {
+  display: flex;
+  padding: 20px 24px;
+  align-items: flex-start;
+  border-radius: 12px;
+  border: 1px solid var(--Borders, #d8e2e7);
+  background: var(--Pure-White, #fff);
+  width: 100%;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  color: var(--gunmetal);
+  margin-top: 8px;
 }
 
 .calculator-result-container {

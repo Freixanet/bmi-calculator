@@ -33,13 +33,15 @@
         </div>
         <div class="calculator">
           <h3>Enter your details below</h3>
+          <!-- MEASUREMENT SYSTEM SELECTORS -->
           <div class="calculator-measurement-system-options">
             <div class="metric-system">
               <input
                 class="calculator-metric-input radio-input"
                 type="radio"
-                name=""
+                name="system-selector"
                 id="metric"
+                checked
               />
               <label class="calculator-metric-label" for="metric">Metric</label>
             </div>
@@ -47,7 +49,7 @@
               <input
                 class="calculator-imperial-input radio-input"
                 type="radio"
-                name=""
+                name="system-selector"
                 id="Imperial"
               />
               <label class="calculator-imperial-label" for="imperial"
@@ -56,22 +58,54 @@
             </div>
           </div>
           <div class="calculator-data-inputs">
+            <!-- HEIGHT INPUT -->
             <label for="height">Height</label>
             <input
-              class="calculator-height-input"
+              class="calculator-height-input-metric"
               type="number"
               name=""
               id="height"
+              placeholder="0.0"
             />
             <p class="cm">cm</p>
+            <p class="ft">ft</p>
+            <p class="in">in</p>
+            <div class="calculator-input-imperial-container">
+              <input
+                class="calculator-height-input-imperial-ft"
+                type="number"
+                placeholder="0.0"
+              />
+              <input
+                class="calculator-height-input-imperial-in"
+                type="number"
+                placeholder="0.0"
+              />
+            </div>
+            <!-- WEIGHT INPUT -->
             <label for="weight">Weight</label>
             <input
-              class="calculator-weight-input"
+              class="calculator-weight-input-metric"
               type="number"
               name=""
               id="weight"
+              placeholder="0.0"
             />
             <p class="kg">kg</p>
+            <p class="st">st</p>
+            <p class="lbs">lbs</p>
+            <div class="calculator-input-imperial-container">
+              <input
+                class="calculator-weight-input-imperial-st"
+                type="number"
+                placeholder="0.0"
+              />
+              <input
+                class="calculator-weight-input-imperial-lbs"
+                type="number"
+                placeholder="0.0"
+              />
+            </div>
           </div>
           <div class="calculator-result-container">
             <h5 class="calculator-result-title">Your BMI is...</h5>
@@ -192,5 +226,6 @@
         </div>
       </div>
     </main>
+    <script src="./scripts.js"></script>
   </body>
 </html>
