@@ -29,6 +29,9 @@ const inch = document.querySelector(".in");
 const st = document.querySelector(".st");
 const lbs = document.querySelector(".lbs");
 const bmiResult = document.querySelector(".calculator-result");
+const firstInRange = document.querySelector(".first-in-range");
+const lastInRange = document.querySelector(".last-in-range");
+const healthStatus = document.querySelector(".health-status");
 
 // FUNCTIONS
 function imperialChecked() {
@@ -67,6 +70,11 @@ function calculateMetricBMI() {
   // Obtén los valores ingresados por el usuario y conviértelos a números.
   const weightInKg = parseFloat(metricWeightInput.value);
   const heightInCm = parseFloat(metricHeightInput.value);
+  const userHeightInMeters = heightInCm / 100;
+  const minimumIdealWeightMetric =
+    userHeightInMeters * userHeightInMeters * 18.5;
+  const maximunIdealWeightMetric =
+    userHeightInMeters * userHeightInMeters * 24.9;
 
   // Realiza el cálculo del IMC en el sistema métrico.
   const heightInM = heightInCm / 100; // Convertir altura de cm a metros
@@ -74,6 +82,21 @@ function calculateMetricBMI() {
 
   // Muestra el resultado con dos decimales en el elemento 'bmiResult'.
   bmiResult.textContent = bmi.toFixed(2);
+
+  firstInRange.textContent = minimumIdealWeightMetric.toFixed(2);
+  lastInRange.textContent = maximunIdealWeightMetric.toFixed(2);
+
+  // Define un margen de error pequeño
+  const margin = 0.01;
+
+  if (
+    weightInKg >= minimumIdealWeightMetric - margin &&
+    weightInKg <= maximunIdealWeightMetric + margin
+  ) {
+    healthStatus.textContent = " a healthy weight";
+  } else {
+    healthStatus.textContent = "not within the healthy weight range";
+  }
 }
 
 function calculateImperialBMI() {
